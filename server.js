@@ -39,7 +39,7 @@ app.use(logger('dev'))
      app.use(()=>{
       if(req.body&& req.params[commentId]){
         temp={}
-       temp.text=(req.body.text).trim()
+       temp.Text=(req.body.Text).trim()
         req.body=Json.parse(temp)
 
       }
