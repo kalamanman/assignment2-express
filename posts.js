@@ -1,19 +1,20 @@
 module.exports = {
     getPosts(req, res){
-    res.send(200,JSON.stringify(req.posts,null,1))
+    res.send(200,req.store)
     },
     addPost(req, res){
-         req.body.comments=[
-     req.posts.push(req.body)
-     res.send(201)
+         postId=req.posts.length
+         req.posts.push(req.body)
+        req.store[postId]=req.body
+     res.send(201,postId)
     },
     updatePost(req, res) {
-         req.postId=int(req.params.postId)
-        req.posts[req.postId]=req.body
+         postId=int(req.params[postId])
+        req.store[postId]=
         res(201,'updated')
     },
     removePost(req, res) {
-        req.posts.splice(int(req.params[postId]),1)
+        req.store[postId]=null
         res.send(204,{"deleted":"deleted"})
   
     }
