@@ -4,22 +4,21 @@ module.exports = {
        res.send(200,(req.posts[postId].comments))
     }, 
     addComment(req, res) {
-      req.postId=int(req.params.postId)
-    req.commentId=req.posts[req.postld].comments.length
-    req.posts[req.postId].comments[req.commentId]=req.body
-     
+      postId=int(req.params.postId)
+      commentsId=req.store[postId[comments]].length
+      req.store[postId[commentId]]=req.body 
      res.send(201,'comment added')
     },
     updateComment(req, res) {
       
       postId=int(req.params.postId)
       commentId=int(req.params.commentId)
-      req.posts[postId].comments[commentId]=req.body
+      req.store[postId[commentId]]=req.body 
     },
     removeComment(req, res){
       postId=int(req.params.postId)
       commentId=int(req.params.commentId)
-      Request.posts[postId].comments.splice(commentId,1)
+      req.store[postId[comments]].splice(commentId,1)
     }  
   }
   
